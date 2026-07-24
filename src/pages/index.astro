@@ -63,12 +63,12 @@ const etapas = [
   {
     n: '2',
     titulo: 'Aprovação com o Produtor Eder Machado',
-    desc: 'Ele avalia e aprova o lançamento antes de ir pro ar, prazo combinado direto com você.',
+    desc: 'Ele avalia e aprova a música antes de ir pro ar, prazo combinado direto com você.',
   },
   {
     n: '3',
-    titulo: 'Distribuição oficial nas plataformas',
-    desc: 'Spotify, Apple Music, Deezer, YouTube e mais, com direitos autorais e arrecadação em dia.',
+    titulo: 'Sua música no Spotify, Deezer e mais',
+    desc: 'Distribuição oficial com direitos autorais e arrecadação em dia. Também colocamos de graça no Cifra Club e no Letras.mus.br.',
   },
 ];
 
@@ -137,7 +137,7 @@ const structuredData = {
     </div>
 
     <div class="mx-auto mt-20 w-full max-w-3xl px-4 sm:px-0">
-      <h2 class="text-center font-display text-2xl text-paper sm:text-3xl">Como funciona o lançamento</h2>
+      <h2 class="text-center font-display text-2xl text-paper sm:text-3xl">Como funciona</h2>
       <div class="mt-8 grid gap-4 sm:grid-cols-3">
         {etapas.map((e) => (
           <div class="glow-card rounded-2xl bg-ink-raised p-5">
@@ -153,11 +153,17 @@ const structuredData = {
         <img src={PLATFORM_LOGOS.apple} alt="Apple Music" class="h-6 w-6" loading="lazy" />
         <img src={PLATFORM_LOGOS.deezer} alt="Deezer" class="h-6 w-6" loading="lazy" />
         <img src={PLATFORM_LOGOS.youtube} alt="YouTube" class="h-6 w-6" loading="lazy" />
+        <span class="text-lg font-bold tracking-[0.1em] text-paper/40" aria-label="e em mais plataformas">...</span>
       </div>
+
+      <p class="mx-auto mt-8 max-w-xl text-center text-sm text-paper/60">
+        Também colocamos sua música de graça no Cifra Club e no Letras.mus.br,
+        e criamos o site oficial do seu projeto se você quiser.
+      </p>
 
       <div class="mt-20">
         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-red">Discografia</p>
-        <h2 class="mt-2 font-display text-2xl text-paper sm:text-3xl">Últimos lançamentos</h2>
+        <h2 class="mt-2 font-display text-2xl text-paper sm:text-3xl">Músicas no ar</h2>
         <div class="mt-4 h-px w-16 bg-gradient-to-r from-brand-purple to-brand-red"></div>
 
         <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -190,6 +196,7 @@ const structuredData = {
                 <a href={r.youtube} target="_blank" rel="noopener noreferrer" aria-label={`Assistir ${r.title} no YouTube`} class="text-white transition hover:text-brand-purple">
                   <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current"><path d="M23 12s0-3.6-.46-5.3a2.9 2.9 0 0 0-2-2C18.9 4.2 12 4.2 12 4.2s-6.9 0-8.54.5a2.9 2.9 0 0 0-2 2C1 8.4 1 12 1 12s0 3.6.46 5.3a2.9 2.9 0 0 0 2 2c1.64.5 8.54.5 8.54.5s6.9 0 8.54-.5a2.9 2.9 0 0 0 2-2C23 15.6 23 12 23 12ZM9.75 15.5v-7l6 3.5Z"/></svg>
                 </a>
+                <span class="text-sm font-bold tracking-[0.1em] text-white/40" aria-label="e em mais plataformas">...</span>
               </div>
             </div>
           ))}
