@@ -1,0 +1,51 @@
+---
+// Toré pediu (24/07): mesmo esquema de menu do emmusicproducoes (logo + links
+// de secao + CTA), mas SEM icone de rede social aqui - o selo EDTMusic em si
+// nao tem conta propria confirmada (Instagram/YouTube/Facebook sao dos
+// artistas, tipo o Eder, nao do selo). "Se nao tiver social midia nao coloca."
+interface Props {
+  whatsappUrl: string;
+}
+const { whatsappUrl } = Astro.props;
+
+const LINKS = [
+  { href: '#topo', label: 'Início' },
+  { href: '#como-funciona', label: 'Como funciona' },
+  { href: '#musicas-no-ar', label: 'Músicas' },
+];
+---
+<div id="site-nav" class="hidden sm:block">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
+    <a href="#topo" class="flex shrink-0 items-center">
+      <img
+        src="/images/edtmusic-logo.png"
+        alt="EDTMusic"
+        class="h-6 w-auto"
+        width="200"
+        height="80"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex">
+      {LINKS.map((l) => (
+        <a
+          href={l.href}
+          class="font-accent text-sm uppercase tracking-[0.15em] text-paper transition hover:text-brand-red"
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-accent hidden rounded-full bg-gradient-to-r from-brand-purple to-brand-red px-4 py-2 text-sm uppercase tracking-wide text-white sm:inline-block"
+      >
+        Falar com a EDTMusic
+      </a>
+    </div>
+  </div>
+</div>
