@@ -2,7 +2,7 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: ['class', '[data-theme="dark"]'],
-  safelist: ['text-brand-orange'],
+  safelist: ['text-brand-purple', 'text-brand-red', 'text-brand-green'],
   theme: {
     extend: {
       colors: {
@@ -14,15 +14,20 @@ export default {
         paper: {
           DEFAULT: '#F7F4EE',
         },
-        // paleta oficial da assinatura "Prod. Eder Machado" (print/imagem/images.png)
+        // EDTMusic nao tem cor propria (a logo real e branca solida) - usa a
+        // paleta oficial da rede (infinito roxo->vermelho->verde), nunca
+        // laranja/dourado (regra da marca)
         brand: {
-          orange: '#FF6A00',
-          orangeDark: '#DA5601',
+          purple: '#4A39A2',
+          red: '#D33D3F',
+          green: '#327857',
         },
       },
       fontFamily: {
-        display: ['"Anton"', 'sans-serif'],
-        body: ['"Work Sans"', 'sans-serif'],
+        hero: ['"Anton"', 'sans-serif'],
+        display: ['"Poppins"', 'sans-serif'],
+        body: ['"Lato"', 'sans-serif'],
+        accent: ['"Abel"', 'sans-serif'],
       },
     },
   },
