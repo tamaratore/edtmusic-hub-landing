@@ -140,11 +140,32 @@
   .media-card:hover { transform: none; }
 }
 
-/* facade de vídeo: thumbnail clicável que vira iframe do YouTube só quando
-   clicado, pra não carregar o player inteiro sem necessidade (performance/SEO) */
-.video-play-btn {
-  transition: transform 0.2s ease;
+/* seta que indica pra rolar pra proxima secao, mesmo padrao do emmusicproducoes */
+.scroll-hint {
+  animation: scroll-hint-bounce 1.8s ease-in-out infinite;
 }
-.video-facade:hover .video-play-btn {
-  transform: scale(1.08);
+@keyframes scroll-hint-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint { animation: none; }
+}
+
+/* botao flutuante de WhatsApp, mesmo padrao do emmusicproducoes */
+.whatsapp-float {
+  animation: whatsapp-pulse 2.4s ease-in-out infinite;
+}
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    animation: none;
+  }
 }
